@@ -490,7 +490,13 @@ body {
 .probability-value {
     font-size: clamp(2.7rem, 8vw, 5rem);
     line-height: 0.9;
+    margin-bottom: 0.8rem;
     color: var(--color-accent);
+}
+
+.probability-card .info-card-sub {
+    display: block;
+    padding-top: 0.15rem;
 }
 
 /* ─── Weather ─── */
