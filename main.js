@@ -231,7 +231,7 @@ function applyCityToCover() {
         img.alt = city.coverAlt[lang] || city.coverAlt.en;
     }
     const loaderSub = document.querySelector('.loader-subtitle');
-    if (loaderSub) loaderSub.textContent = t('folioCurated');
+    if (loaderSub) loaderSub.textContent = 'Beauty loading...';
     document.title = 'Ave Maria | ' + t('folioCurated');
 }
 

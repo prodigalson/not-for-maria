@@ -13,7 +13,7 @@ export const DEFAULT_CITY = 'maria';
 export const translations = {
     coverTagline: { en: 'A field guide to unforgettable places\naround the world.' },
     coverDesc: { en: 'The most romantic places Johnny took his friends,\nnow mapped for Matt to take Maria.' },
-    openMagazine: { en: 'Open the file' },
+    openMagazine: { en: 'Discover' },
     enter: { en: 'Enter' },
     folioDate: { en: 'Evidence' },
     folioOf: { en: 'of' },
