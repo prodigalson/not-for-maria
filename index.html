@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Not for Maria | Romantic Evidence</title>
+
+    <meta property="og:title" content="Not for Maria - Romantic Evidence">
+    <meta property="og:description" content="The most romantic places I took my friends that Matt never took his fiancee.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1582150050076-52baeeba4a74?w=1200&h=630&q=80&fit=crop">
+    <meta property="og:image:secure_url" content="https://images.unsplash.com/photo-1582150050076-52baeeba4a74?w=1200&h=630&q=80&fit=crop">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Not for Maria romantic evidence on Lake Como">
+    <meta property="og:url" content="https://not-for-maria.vercel.app/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Not for Maria">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Not for Maria - Romantic Evidence">
+    <meta name="twitter:description" content="Romantic places, friends invited, fiancee notably absent.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1582150050076-52baeeba4a74?w=1200&h=630&q=80&fit=crop">
+    <meta name="twitter:image:alt" content="Not for Maria romantic evidence on Lake Como">
+
+    <meta name="description" content="The most romantic places I took my friends that Matt never took his fiancee.">
+    <meta name="theme-color" content="#F5F4F0">
+
+    <link rel="canonical" href="https://not-for-maria.vercel.app/">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="loader-title">Not for Maria</div>
+            <div class="loader-subtitle">Romantic Evidence</div>
+            <div class="loader-bar"><div class="loader-fill"></div></div>
+        </div>
+    </div>
+
+    <div class="cover-spread" id="cover">
+        <div class="cover-bg">
+            <img src="https://images.unsplash.com/photo-1582150050076-52baeeba4a74?w=2200&q=80&fit=crop" alt="Lake Como at sunset">
+        </div>
+        <div class="cover-overlay">
+            <div class="cover-top"></div>
+            <div class="cover-center">
+                <h1 class="cover-title">Not for Maria</h1>
+                <p class="cover-tagline" data-i18n="coverTagline">Romantic places Matt<br>never took his fiancee.</p>
+                <p class="cover-desc" data-i18n="coverDesc">A mobile field guide to beautiful places,<br>questionable priorities, and documented evidence.</p>
+            </div>
+            <div class="cover-bottom">
+                <div class="cover-enter" id="enter-btn">
+                    <span data-i18n="openMagazine">Enter</span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="magazine" id="magazine"></div>
+
+    <div class="no-results" id="no-results">
+        <p data-i18n="noResults">No spots match your filters.</p>
+    </div>
+
+    <button type="button" class="nav-arrow nav-prev" id="nav-prev" aria-label="Previous spot">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+    </button>
+    <button type="button" class="nav-arrow nav-next" id="nav-next" aria-label="Next spot">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+    </button>
+
+    <div class="kb-hint" id="kb-hint">
+        <span class="kb-hint-desktop" data-i18n="kbHint">Use arrow keys or scroll to navigate</span>
+        <span class="kb-hint-touch" data-i18n="swipeHint">Swipe to explore</span>
+    </div>
+
+    <div class="toolbar" id="toolbar">
+        <button class="toolbar-btn menu-toggle" id="menu-toggle" title="Menu" aria-label="Menu" aria-expanded="false" aria-controls="menu-popover">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="19" r="1.5"/>
+            </svg>
+        </button>
+        <div class="menu-popover" id="menu-popover">
+            <div class="menu-section">
+                <div class="lang-toggle" id="lang-toggle-mag">
+                    <span class="menu-kicker">Case file</span>
+                </div>
+            </div>
+            <div class="menu-divider"></div>
+            <button class="menu-item" id="filter-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6h16M6 12h12M8 18h8"/></svg>
+                Filters
+            </button>
+            <button class="menu-item" id="share-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8M16 6l-4-4-4 4M12 2v13"/></svg>
+                Share
+            </button>
+        </div>
+    </div>
+
+    <div class="panel-backdrop" id="filter-backdrop"></div>
+    <div class="filter-panel" id="filter-panel">
+        <h2 data-i18n="filterTitle">Filter Spots</h2>
+
+        <div class="filter-group">
+            <label data-i18n="type">Date Type</label>
+            <div class="pill-row pill-row-wrap" data-filter="dateType">
+                <button class="pill active" data-value="any" data-i18n="any">Any</button>
+                <button class="pill pill-sm" data-value="romantic-dinner" data-i18n="romantic-dinner">Romantic Dinner</button>
+                <button class="pill pill-sm" data-value="casual-lunch" data-i18n="casual-lunch">Casual Lunch</button>
+                <button class="pill pill-sm" data-value="cocktail-bar" data-i18n="cocktail-bar">Cocktail Bar</button>
+                <button class="pill pill-sm" data-value="aperitivo" data-i18n="aperitivo">Aperitivo</button>
+                <button class="pill pill-sm" data-value="coffee-pastry" data-i18n="coffee-pastry">Coffee &amp; Pastry</button>
+                <button class="pill pill-sm" data-value="cultural" data-i18n="cultural">Cultural</button>
+                <button class="pill pill-sm" data-value="outdoor" data-i18n="outdoor">Outdoor</button>
+                <button class="pill pill-sm" data-value="live-music" data-i18n="live-music">Live Music</button>
+                <button class="pill pill-sm" data-value="workout" data-i18n="workout">Workout</button>
+            </div>
+        </div>
+
+        <div class="filter-group">
+            <label data-i18n="vibeFilter">Vibe</label>
+            <div class="pill-row" data-filter="vibe">
+                <button class="pill active" data-value="any" data-i18n="any">Any</button>
+                <button class="pill" data-value="romantic" data-i18n="romantic">Romantic</button>
+                <button class="pill" data-value="casual" data-i18n="casual">Casual</button>
+                <button class="pill" data-value="festive" data-i18n="festive">Festive</button>
+                <button class="pill" data-value="classic" data-i18n="classic">Classic</button>
+            </div>
+        </div>
+
+        <div class="filter-group">
+            <label data-i18n="priceFilter">Price</label>
+            <div class="pill-row" data-filter="priceRange">
+                <button class="pill active" data-value="any" data-i18n="any">Any</button>
+                <button class="pill" data-value="1">&euro;</button>
+                <button class="pill" data-value="2">&euro;&euro;</button>
+                <button class="pill" data-value="3">&euro;&euro;&euro;</button>
+                <button class="pill" data-value="4">&euro;&euro;&euro;&euro;</button>
+            </div>
+        </div>
+
+        <div class="filter-group">
+            <label data-i18n="horoscope">Horoscope</label>
+            <div class="pill-row pill-row-wrap" data-filter="horoscope">
+                <button class="pill active" data-value="any" data-i18n="any">Any</button>
+                <button class="pill pill-sm" data-value="aries" data-i18n="aries">&#9800; Aries</button>
+                <button class="pill pill-sm" data-value="taurus" data-i18n="taurus">&#9801; Taurus</button>
+                <button class="pill pill-sm" data-value="gemini" data-i18n="gemini">&#9802; Gemini</button>
+                <button class="pill pill-sm" data-value="cancer" data-i18n="cancer">&#9803; Cancer</button>
+                <button class="pill pill-sm" data-value="leo" data-i18n="leo">&#9804; Leo</button>
+                <button class="pill pill-sm" data-value="virgo" data-i18n="virgo">&#9805; Virgo</button>
+                <button class="pill pill-sm" data-value="libra" data-i18n="libra">&#9806; Libra</button>
+                <button class="pill pill-sm" data-value="scorpio" data-i18n="scorpio">&#9807; Scorpio</button>
+                <button class="pill pill-sm" data-value="sagittarius" data-i18n="sagittarius">&#9808; Sagittarius</button>
+                <button class="pill pill-sm" data-value="capricorn" data-i18n="capricorn">&#9809; Capricorn</button>
+                <button class="pill pill-sm" data-value="aquarius" data-i18n="aquarius">&#9810; Aquarius</button>
+                <button class="pill pill-sm" data-value="pisces" data-i18n="pisces">&#9811; Pisces</button>
+            </div>
+        </div>
+
+        <button class="reset-btn" id="reset-filters" data-i18n="reset">Reset Filters</button>
+    </div>
+
+    <script type="module" src="/main.js"></script>
+</body>
+</html>

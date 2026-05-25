@@ -1,0 +1,1360 @@
+:root {
+    --color-bg: #F5F4F0;
+    --color-text-main: #1A1A1A;
+    --color-text-muted: #555555;
+    --color-accent: #8A7B66;
+    --font-display: 'Cormorant Garamond', serif;
+    --font-sans: 'Jost', sans-serif;
+    --margin-outer: 4vw;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    background-color: #000;
+    color: var(--color-text-main);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Loader ─── */
+.loader {
+    position: fixed;
+    inset: 0;
+    background: #0a0a0a;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+.loader.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.loader-content {
+    text-align: center;
+}
+
+.loader-title {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    font-style: italic;
+    color: #fff;
+    letter-spacing: 0.05em;
+}
+
+.loader-subtitle {
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: #666;
+    margin-top: 0.5rem;
+}
+
+.loader-bar {
+    width: 120px;
+    height: 1px;
+    background: #333;
+    margin: 2rem auto 0;
+    overflow: hidden;
+}
+
+.loader-fill {
+    height: 100%;
+    width: 0%;
+    background: #fff;
+    transition: width 0.3s ease;
+}
+
+/* ─── Cover ─── */
+.cover-spread {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    opacity: 1;
+    transform: none;
+    overflow: hidden;
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.cover-spread.hidden {
+    opacity: 0;
+    transform: scale(1.02);
+    pointer-events: none;
+}
+
+.cover-bg {
+    position: absolute;
+    inset: 0;
+}
+
+.cover-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 40%;
+    filter: brightness(0.35) contrast(1.1) saturate(0.8);
+}
+
+.cover-overlay {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 3rem 4rem;
+    color: #fff;
+}
+
+.cover-top {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: rgba(255,255,255,0.5);
+}
+
+.cover-center {
+    text-align: center;
+}
+
+.cover-title {
+    font-family: var(--font-display);
+    font-size: clamp(5rem, 12vw, 12rem);
+    font-weight: 400;
+    font-style: italic;
+    line-height: 0.85;
+    letter-spacing: 0.02em;
+    margin-bottom: 1.5rem;
+}
+
+.cover-tagline {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-weight: 400;
+    line-height: 1.3;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 1rem;
+}
+
+.cover-desc {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: rgba(255,255,255,0.72);
+    line-height: 1.6;
+}
+
+.city-toggle {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+    padding: 0.35rem;
+    max-width: 100%;
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 2px;
+    background: rgba(0,0,0,0.2);
+    backdrop-filter: blur(4px);
+}
+
+.city-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.9rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-sans);
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    transition: color 0.25s ease, background 0.25s ease;
+    border-radius: 2px;
+    white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+    .city-toggle {
+        gap: 0.25rem;
+        padding: 0.3rem;
+    }
+    .city-btn {
+        padding: 0.45rem 0.65rem;
+        gap: 0.35rem;
+        letter-spacing: 0.12em;
+        font-size: 0.6rem;
+    }
+    .city-btn-flag {
+        font-size: 0.8rem;
+    }
+}
+
+.city-btn:hover {
+    color: #fff;
+}
+
+.city-btn.active {
+    color: #1A1A1A;
+    background: rgba(255,255,255,0.88);
+}
+
+.city-btn-flag {
+    font-size: 0.9rem;
+    line-height: 1;
+}
+
+.cover-bottom {
+    display: flex;
+    justify-content: center;
+}
+
+.cover-enter {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: rgba(255,255,255,0.6);
+    cursor: pointer;
+    transition: color 0.3s ease;
+    padding: 1rem 2rem;
+    border: 1px solid rgba(255,255,255,0.15);
+}
+
+.cover-enter:hover {
+    color: #fff;
+    border-color: rgba(255,255,255,0.4);
+}
+
+.cover-link {
+    display: block;
+    margin-top: 1rem;
+    font-family: var(--font-sans);
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: rgba(255,255,255,0.4);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.cover-link:hover {
+    color: rgba(255,255,255,0.7);
+}
+
+/* ─── Magazine container ─── */
+.magazine {
+    position: fixed;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.6s ease;
+}
+
+.magazine.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* ─── Spread ─── */
+.spread {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: var(--color-bg);
+    opacity: 0;
+    transition: opacity 0.7s ease, transform 0.7s ease;
+    transform: translateX(30px);
+    pointer-events: none;
+}
+
+.spread.active {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: all;
+    z-index: 5;
+}
+
+.spread.exit-left {
+    opacity: 0;
+    transform: translateX(-30px);
+}
+
+/* Magazine gutter shadow */
+.spread::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 80px;
+    transform: translateX(-50%);
+    background: linear-gradient(
+        90deg,
+        rgba(0,0,0,0) 0%,
+        rgba(0,0,0,0.08) 45%,
+        rgba(0,0,0,0.15) 50%,
+        rgba(0,0,0,0.08) 55%,
+        rgba(0,0,0,0) 100%
+    );
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* ─── Left page (image) ─── */
+.page-left {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-color: #e8e6e0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Crect fill='%23e8e6e0' width='800' height='600'/%3E%3Cg fill='%23d4d0c8' opacity='.3'%3E%3Ccircle cx='200' cy='180' r='60'/%3E%3Ccircle cx='500' cy='250' r='45'/%3E%3Ccircle cx='350' cy='350' r='55'/%3E%3Cpath d='M0 400Q200 320 400 370T800 340V600H0Z' opacity='.5'/%3E%3Cpath d='M0 450Q300 400 600 430T800 420V600H0Z' opacity='.4'/%3E%3C/g%3E%3Ctext x='400' y='290' text-anchor='middle' font-family='serif' font-size='24' fill='%23aaa' font-style='italic'%3EImage coming soon%3C/text%3E%3C/svg%3E");
+    background-size: cover;
+    background-position: center;
+}
+
+.page-left img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: contrast(1.1) saturate(1.1) sepia(0.1);
+    transition: transform 8s ease;
+}
+
+.spread.active .page-left img {
+    transform: scale(1.03);
+}
+
+/* ─── Right page ─── */
+.page-right {
+    position: relative;
+    height: 100%;
+    padding: var(--margin-outer);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+/* Folio header */
+.folio {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-text-muted);
+}
+
+.folio-left {
+    display: flex;
+    gap: 2rem;
+}
+
+/* ─── Info layout (replaces old content-block) ─── */
+.info-layout {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3rem;
+    padding: 2rem 0;
+}
+
+/* Destination title */
+.destination-title {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 5.5vw, 6.5rem);
+    font-weight: 400;
+    line-height: 0.85;
+    letter-spacing: -0.02em;
+    color: var(--color-text-main);
+    white-space: pre-line;
+    overflow-wrap: normal;
+    word-break: keep-all;
+    hyphens: manual;
+    max-width: 100%;
+}
+
+/* Long single-line words like ARCHEOLOGIQUE or MONTENAPOLEONE need a smaller
+   font on narrow columns, otherwise they overflow or break mid-word. */
+.destination-title.t-tight { font-size: clamp(2.4rem, 4.4vw, 5.2rem); letter-spacing: -0.025em; }
+.destination-title.t-tighter { font-size: clamp(2rem, 3.6vw, 4.4rem); letter-spacing: -0.03em; }
+
+.destination-title span {
+    display: block;
+    font-style: italic;
+    font-size: 0.5em;
+    color: var(--color-accent);
+    letter-spacing: 0;
+    margin-top: 0.3em;
+}
+
+.destination-description {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(1rem, 1.25vw, 1.35rem);
+    line-height: 1.55;
+    color: var(--color-text-main);
+    max-width: 42ch;
+}
+
+.maps-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    text-decoration: none;
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    background: var(--color-text-main);
+    color: var(--color-bg);
+    padding: 0.9rem 1.2rem;
+    border-radius: 2px;
+    margin-top: 0.2rem;
+    transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.maps-btn:hover {
+    background: var(--color-accent);
+    transform: translateY(-1px);
+}
+
+/* ─── Info cards ─── */
+.info-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.info-card {
+    border-top: 1px solid var(--color-text-main);
+    padding-top: 1.2rem;
+}
+
+.info-card-label {
+    font-family: var(--font-sans);
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--color-text-muted);
+    margin-bottom: 0.5rem;
+}
+
+.info-card-value {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 400;
+    line-height: 1;
+    color: var(--color-text-main);
+    margin-bottom: 0.4rem;
+}
+
+.info-card-sub {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    letter-spacing: 0.02em;
+}
+
+/* ─── Weather ─── */
+.weather-card {
+    min-height: 120px;
+}
+
+.weather-data {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+.weather-loading {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    letter-spacing: 0.05em;
+}
+
+.weather-now {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.weather-icon {
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.weather-temp {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 400;
+    line-height: 1;
+    color: var(--color-text-main);
+}
+
+.weather-desc {
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+}
+
+.weather-wind {
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    color: var(--color-text-muted);
+    width: 100%;
+    margin-top: 0.2rem;
+}
+
+.weather-forecast {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.forecast-day {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.forecast-label {
+    font-family: var(--font-sans);
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-muted);
+}
+
+.forecast-icon {
+    font-size: 1.2rem;
+}
+
+.forecast-temps {
+    font-family: var(--font-sans);
+    font-size: 0.65rem;
+    color: var(--color-text-main);
+}
+
+/* Page numbers */
+.page-num {
+    position: absolute;
+    bottom: var(--margin-outer);
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    color: var(--color-text-main);
+}
+
+.page-num.left {
+    display: none;
+}
+
+.page-num.right {
+    display: none;
+}
+
+/* Share destination button */
+.share-dest-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: var(--font-sans);
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-accent);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem 0;
+    transition: color 0.2s ease;
+    width: auto;
+}
+
+.share-dest-btn:hover {
+    color: var(--color-text-main);
+}
+
+.share-dest-btn.copied {
+    color: var(--color-text-main);
+}
+
+/* Footer folio */
+.folio-footer {
+    justify-content: center;
+    border-top: 1px solid #ddd;
+    padding-top: 1rem;
+    margin-top: 0;
+}
+
+/* ─── Navigation ─── */
+.nav-dots {
+    display: none;
+}
+
+.nav-arrow {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 200;
+    cursor: pointer;
+    padding: 1rem;
+    color: rgba(0,0,0,0.25);
+    transition: all 0.3s ease;
+    opacity: 0;
+    pointer-events: none;
+    /* Reset button element defaults since these used to be divs */
+    background: transparent;
+    border: 0;
+    font: inherit;
+    line-height: 0;
+}
+
+.nav-arrow.visible {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.nav-arrow:hover {
+    color: var(--color-text-main);
+}
+
+.nav-prev {
+    left: 0.5rem;
+}
+
+.nav-next {
+    right: 0.5rem;
+}
+
+/* Keyboard hint */
+.kb-hint {
+    position: fixed;
+    bottom: 3.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 200;
+    font-family: var(--font-sans);
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: rgba(255,255,255,0.3);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.kb-hint.visible {
+    opacity: 1;
+}
+
+/* Show the right copy for the right device. Desktop sees the keyboard/scroll
+   hint; touch devices see the swipe hint. Uses hover+pointer media query so
+   it fires on phones/tablets regardless of viewport width. */
+.kb-hint-touch { display: none; }
+.kb-hint-desktop { display: inline; }
+@media (hover: none) and (pointer: coarse) {
+    .kb-hint-desktop { display: none; }
+    .kb-hint-touch { display: inline; }
+    .kb-hint-touch::after {
+        content: '\203A\00a0\203A';
+        display: inline-block;
+        margin-left: 0.5em;
+        animation: swipeNudge 1.4s ease-in-out infinite;
+    }
+}
+
+@keyframes swipeNudge {
+    0%, 100% { transform: translateX(0); opacity: 0.6; }
+    50%      { transform: translateX(6px); opacity: 1; }
+}
+
+/* ─── Mobile ─── */
+@media (max-width: 1024px) {
+    html, body {
+        height: auto;
+        overflow: hidden;
+    }
+
+    .magazine {
+        overflow: hidden;
+    }
+
+    .spread {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        /* Promote to its own compositor layer so scroll repaints don't redraw siblings. */
+        transform: translateZ(0);
+    }
+
+    .spread::after {
+        display: none;
+    }
+
+    /* Drop CSS image filters and the slow Ken Burns zoom on mobile —
+       both re-run every scroll frame and visibly hitch on phones. */
+    .page-left img { filter: none; transition: none; }
+    .spread.active .page-left img { transform: none; }
+
+    /* Disable text entrance animations on mobile — they fire concurrent
+       with scroll and contribute to jank. */
+    .spread.active .destination-title,
+    .spread.active .info-cards { animation: none; }
+
+    .page-left {
+        height: 50vh;
+        min-height: 260px;
+        flex-shrink: 0;
+    }
+
+    .page-right {
+        height: auto;
+        min-height: auto;
+        padding: 6vw;
+        overflow: visible;
+    }
+
+    .info-layout {
+        gap: 2rem;
+        padding: 1rem 0;
+    }
+
+    .destination-title {
+        font-size: clamp(2.8rem, 12vw, 5rem);
+        line-height: 0.9;
+    }
+    .destination-title.t-tight { font-size: clamp(2rem, 8.6vw, 3.6rem); }
+    .destination-title.t-tighter { font-size: clamp(1.6rem, 7.2vw, 3rem); }
+
+    .destination-title span {
+        font-size: 0.45em;
+    }
+    .destination-title.t-tight span { font-size: 0.55em; }
+    .destination-title.t-tighter span { font-size: 0.65em; }
+
+    .info-cards {
+        gap: 1.5rem;
+    }
+
+    .info-card-value {
+        font-size: clamp(1.8rem, 8vw, 2.5rem);
+    }
+
+    .destination-description {
+        font-size: 1rem;
+        line-height: 1.5;
+        max-width: none;
+    }
+
+    .maps-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 1rem 1.2rem;
+        font-size: 0.7rem;
+    }
+
+    .share-dest-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .folio-footer {
+        margin-top: 1.5rem;
+        padding-bottom: 3rem;
+    }
+
+    .page-num.left {
+        bottom: 2vw;
+        left: 3vw;
+    }
+
+    .page-num.right {
+        display: none;
+    }
+
+    /* Cover mobile */
+    .cover-bg img {
+        filter: brightness(0.45) contrast(1.15) saturate(0.8);
+    }
+
+    .cover-overlay {
+        padding: 2rem;
+        text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+    }
+
+    .cover-title {
+        font-size: clamp(3.5rem, 15vw, 7rem);
+    }
+
+    .cover-tagline {
+        font-size: clamp(1.2rem, 5vw, 1.8rem);
+    }
+
+    .cover-desc {
+        font-size: 0.8rem;
+        letter-spacing: 0.1em;
+        color: rgba(255,255,255,0.85);
+    }
+
+    .cover-enter {
+        font-size: 0.65rem;
+        padding: 0.8rem 1.5rem;
+    }
+
+    /* Nav mobile */
+    .nav-arrow {
+        display: none;
+    }
+
+    .nav-dots {
+        bottom: 0.75rem;
+    }
+
+    .nav-dot {
+        width: 7px;
+        height: 7px;
+        background: rgba(0,0,0,0.15);
+    }
+
+    .nav-dot.active {
+        background: var(--color-accent);
+    }
+
+    /* On mobile, pin the hint to the top of the photo instead of the bottom of the
+       page. The photo (page-left) is the first 50vh. Placing the hint there means
+       it rides over a dark image (good contrast) and doesn't fight for real estate
+       with the destination title/description/info-card below. Add a subtle pill
+       background so it reads cleanly regardless of which image is behind it. */
+    .kb-hint {
+        bottom: auto;
+        top: 1rem;
+        font-size: 0.6rem;
+        color: #fff;
+        background: rgba(0, 0, 0, 0.55);
+        padding: 0.45rem 0.85rem;
+        border-radius: 999px;
+        /* backdrop-filter removed on mobile — re-blurs on every scroll frame. */
+    }
+}
+
+/* ─── Smooth entrance animations ─── */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.spread.active .destination-title {
+    animation: fadeInUp 0.8s ease 0.2s both;
+}
+
+.spread.active .info-cards {
+    animation: fadeInUp 0.8s ease 0.4s both;
+}
+
+/* ─── Language toggle ─── */
+.lang-toggle {
+    display: flex;
+    gap: 0.4rem;
+    align-items: center;
+}
+
+.menu-kicker {
+    font-family: var(--font-sans);
+    font-size: 0.62rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+}
+
+.lang-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    opacity: 0.4;
+    transition: opacity 0.2s ease;
+    padding: 0.5rem;
+    min-width: 44px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+/* Focus visible for keyboard accessibility */
+*:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
+.lang-btn.active {
+    opacity: 1;
+}
+
+.lang-btn:hover {
+    opacity: 0.8;
+}
+
+/* ─── Toolbar (magazine view) ─── */
+.toolbar {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 200;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.toolbar.visible {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.menu-toggle {
+    background: rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,0,0,0.12);
+    color: var(--color-text-muted);
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.menu-toggle:hover {
+    background: rgba(0,0,0,0.1);
+    color: var(--color-text-main);
+}
+
+.menu-toggle.has-filter::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    width: 6px;
+    height: 6px;
+    background: var(--color-accent);
+    border-radius: 50%;
+}
+
+.menu-popover {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    right: 0;
+    background: var(--color-bg);
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 8px;
+    padding: 0.5rem;
+    min-width: 200px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4px);
+    transition: all 0.2s ease;
+}
+
+.menu-popover.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.menu-section {
+    padding: 0.4rem 0.5rem;
+}
+
+.menu-divider {
+    height: 1px;
+    background: rgba(0,0,0,0.08);
+    margin: 0.3rem 0;
+}
+
+.menu-label {
+    font-family: var(--font-sans);
+    font-size: 0.55rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-text-muted);
+    padding: 0.5rem 0.75rem 0.25rem;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    width: 100%;
+    padding: 0.65rem 0.75rem;
+    min-height: 44px;
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    color: var(--color-text-main);
+    background: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.15s ease;
+    text-align: left;
+}
+
+.menu-item:hover {
+    background: rgba(0,0,0,0.05);
+}
+
+/* Keep toolbar-btn class for filter indicator */
+.toolbar-btn.has-filter::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    width: 6px;
+    height: 6px;
+    background: var(--color-accent);
+    border-radius: 50%;
+}
+
+/* ─── Filter panel ─── */
+.panel-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.3);
+    z-index: 250;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.panel-backdrop.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.filter-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 280px;
+    background: var(--color-bg);
+    z-index: 260;
+    padding: 2rem 1.5rem;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+}
+
+.filter-panel.open {
+    transform: translateX(0);
+}
+
+.filter-panel h2 {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    color: var(--color-text-main);
+}
+
+.filter-group {
+    margin-bottom: 1.5rem;
+}
+
+.filter-group label {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-text-muted);
+    margin-bottom: 0.6rem;
+}
+
+.pill-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.pill {
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    padding: 0.4rem 0.8rem;
+    border: 1px solid #ccc;
+    background: transparent;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    border-radius: 20px;
+    min-height: 32px;
+    transition: all 0.2s ease;
+}
+
+.pill:hover {
+    border-color: var(--color-accent);
+    color: var(--color-text-main);
+}
+
+.pill.active {
+    background: var(--color-text-main);
+    color: var(--color-bg);
+    border-color: var(--color-text-main);
+}
+
+.pill-sm {
+    font-size: 0.6rem;
+    padding: 0.3rem 0.6rem;
+}
+
+.pill-row-wrap {
+    flex-wrap: wrap;
+}
+
+.reset-btn {
+    display: block;
+    margin-top: 2rem;
+    font-family: var(--font-sans);
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-accent);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.reset-btn:hover {
+    color: var(--color-text-main);
+}
+
+/* ─── Submit modal ─── */
+.modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: 300;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-backdrop.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.submit-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.95);
+    z-index: 310;
+    background: var(--color-bg);
+    padding: 2.5rem;
+    width: min(400px, 90vw);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.submit-modal.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.submit-modal h2 {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    color: var(--color-text-main);
+}
+
+.modal-desc {
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    margin-bottom: 1.5rem;
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    line-height: 1;
+}
+
+.modal-close:hover {
+    color: var(--color-text-main);
+}
+
+#submit-form input {
+    display: block;
+    width: 100%;
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    padding: 0.7rem 0;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    background: transparent;
+    color: var(--color-text-main);
+    margin-bottom: 1rem;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+#submit-form input:focus {
+    border-bottom-color: var(--color-accent);
+}
+
+#submit-form button[type="submit"] {
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    padding: 0.8rem 2rem;
+    background: var(--color-text-main);
+    color: var(--color-bg);
+    border: none;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    transition: background 0.2s ease;
+}
+
+#submit-form button[type="submit"]:hover {
+    background: var(--color-accent);
+}
+
+.submit-success {
+    display: none;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.success-title {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+/* ─── No results ─── */
+.no-results {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 4;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.no-results.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.no-results p {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    color: var(--color-text-muted);
+    text-align: center;
+}
+
+/* ─── Mobile overrides for new components ─── */
+@media (max-width: 1024px) {
+    .toolbar {
+        top: 0.75rem;
+        right: 0.75rem;
+    }
+
+    .menu-popover {
+        min-width: 180px;
+    }
+
+    .filter-panel {
+        width: 100%;
+        top: auto;
+        bottom: 0;
+        height: auto;
+        max-height: 70vh;
+        transform: translateY(100%);
+        border-radius: 16px 16px 0 0;
+    }
+
+    .filter-panel.open {
+        transform: translateY(0);
+    }
+
+    /* Touch target: iOS HIG minimum is 44px. Pills stay visually compact
+       but get enough height for fingers. Vertical gap widens so they don't
+       crowd each other when taller. */
+    .pill {
+        min-height: 44px;
+        padding: 0.5rem 0.9rem;
+    }
+    .pill-sm {
+        min-height: 40px;
+        padding: 0.45rem 0.75rem;
+        font-size: 0.65rem;
+    }
+    .pill-row {
+        gap: 0.5rem;
+    }
+
+    .submit-modal {
+        width: 90vw;
+        padding: 2rem;
+    }
+}

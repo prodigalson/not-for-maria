@@ -1,0 +1,62 @@
+[
+  {
+    "id": "ocya-ilha",
+    "city": "maria",
+    "name": "OCYA\nILHA",
+    "neighborhood": {
+      "en": "Ilha Primeira, Rio de Janeiro"
+    },
+    "description": {
+      "en": "A seafood restaurant reached by boat, hidden on Ilha Primeira in Barra da Tijuca. The kind of place where the arrival already feels like a romantic subplot, which is precisely the point of the file."
+    },
+    "heroImage": "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?w=1800&q=80&fit=crop",
+    "heroAlt": "Rio de Janeiro coastline at sunset",
+    "heroPosition": "center center",
+    "dateType": "romantic-dinner",
+    "vibe": "romantic",
+    "priceRange": 4,
+    "mapsUrl": "https://maps.app.goo.gl/XWU4NfX7kF2kRT5ZA?g_st=ic",
+    "lat": -22.999,
+    "lon": -43.315
+  },
+  {
+    "id": "il-sereno-hotel",
+    "city": "maria",
+    "name": "IL\nSERENO",
+    "neighborhood": {
+      "en": "Torno, Lake Como"
+    },
+    "description": {
+      "en": "Glass, water, mountains, and the sort of serene lakefront drama people usually reserve for engagement weekends. Apparently friends were eligible for this view before Maria was."
+    },
+    "heroImage": "https://images.unsplash.com/photo-1710954695593-32563ce4767a?w=1800&q=80&fit=crop",
+    "heroAlt": "Lake Como with mountains in the background",
+    "heroPosition": "center center",
+    "dateType": "cocktail-bar",
+    "vibe": "classic",
+    "priceRange": 4,
+    "mapsUrl": "https://maps.app.goo.gl/bBTXLUZA9Mq5kNms9?g_st=ic",
+    "lat": 45.856,
+    "lon": 9.116
+  },
+  {
+    "id": "mandarin-oriental-lago-di-como",
+    "city": "maria",
+    "name": "MANDARIN\nORIENTAL",
+    "neighborhood": {
+      "en": "Blevio, Lake Como"
+    },
+    "description": {
+      "en": "A polished lakeside hideaway with the full cinematic Lake Como treatment: terraces, boats, quiet luxury, and undeniable evidence that romance was absolutely available as an option."
+    },
+    "heroImage": "https://images.unsplash.com/photo-1669444004212-27e8b336370f?w=1800&q=80&fit=crop",
+    "heroAlt": "Lake Como shoreline with buildings and mountains",
+    "heroPosition": "center center",
+    "dateType": "romantic-dinner",
+    "vibe": "romantic",
+    "priceRange": 4,
+    "mapsUrl": "https://maps.app.goo.gl/ytKEBYXVkt3r7qXm6?g_st=ic",
+    "lat": 45.843,
+    "lon": 9.098
+  }
+]
