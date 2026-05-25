@@ -1,7 +1,7 @@
 {
   "name": "not-for-maria",
   "version": "1.0.0",
-  "description": "Not for Maria - romantic evidence magazine",
+  "description": "Ave Maria - romantic evidence magazine",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

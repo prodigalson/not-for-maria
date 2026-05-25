@@ -1,6 +1,6 @@
 export const CITIES = {
     maria: {
-        label: { en: 'Not for Maria' },
+        label: { en: 'Ave Maria' },
         short: { en: 'NFM' },
         coverImage: 'https://images.unsplash.com/photo-1582150050076-52baeeba4a74?w=2200&q=80&fit=crop',
         coverAlt: { en: 'Lake Como at sunset' },
@@ -23,7 +23,9 @@ export const translations = {
     priceRange: { en: 'Price' },
     vibe: { en: 'Vibe' },
     openInMaps: { en: 'Open in Google Maps' },
-    footerText: { en: 'NOT FOR MARIA / ROMANTIC EVIDENCE' },
+    mariaProbability: { en: 'Probability Maria Would Love This' },
+    googleRating: { en: 'Google average' },
+    footerText: { en: 'AVE MARIA / ROMANTIC EVIDENCE' },
     kbHint: { en: 'Use arrow keys or scroll to navigate' },
     swipeHint: { en: 'Swipe to inspect evidence' },
     issueNo: { en: 'Case File No. 01' },

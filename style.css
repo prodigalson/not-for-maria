@@ -483,6 +483,16 @@ body {
     letter-spacing: 0.02em;
 }
 
+.probability-card {
+    border-top-color: var(--color-accent);
+}
+
+.probability-value {
+    font-size: clamp(2.7rem, 8vw, 5rem);
+    line-height: 0.9;
+    color: var(--color-accent);
+}
+
 /* ─── Weather ─── */
 .weather-card {
     min-height: 120px;

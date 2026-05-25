@@ -15,6 +15,7 @@
     "dateType": "romantic-dinner",
     "vibe": "romantic",
     "priceRange": 4,
+    "googleRating": 4.5,
     "mapsUrl": "https://maps.app.goo.gl/XWU4NfX7kF2kRT5ZA?g_st=ic",
     "lat": -22.999,
     "lon": -43.315
@@ -35,6 +36,7 @@
     "dateType": "cocktail-bar",
     "vibe": "classic",
     "priceRange": 4,
+    "googleRating": 4.6,
     "mapsUrl": "https://maps.app.goo.gl/bBTXLUZA9Mq5kNms9?g_st=ic",
     "lat": 45.856,
     "lon": 9.116
@@ -55,8 +57,30 @@
     "dateType": "romantic-dinner",
     "vibe": "romantic",
     "priceRange": 4,
+    "googleRating": 4.6,
     "mapsUrl": "https://maps.app.goo.gl/ytKEBYXVkt3r7qXm6?g_st=ic",
     "lat": 45.843,
     "lon": 9.098
+  },
+  {
+    "id": "la-fontelina",
+    "city": "maria",
+    "name": "LA\nFONTELINA",
+    "neighborhood": {
+      "en": "Faraglioni, Capri"
+    },
+    "description": {
+      "en": "A legendary Capri beach club tucked beneath the Faraglioni, all sunbeds, sea ladders, white linen, and seafood with a view. In other words: a catastrophic omission from the fiancee itinerary."
+    },
+    "heroImage": "https://images.unsplash.com/photo-1654991939539-b8063cf23b9f?w=1800&q=80&fit=crop",
+    "heroAlt": "Faraglioni rocks in Capri",
+    "heroPosition": "center center",
+    "dateType": "romantic-dinner",
+    "vibe": "classic",
+    "priceRange": 4,
+    "googleRating": 3.9,
+    "mapsUrl": "https://maps.app.goo.gl/BeoRPxUaseni7LLY6?g_st=ic",
+    "lat": 40.543,
+    "lon": 14.257
   }
 ]

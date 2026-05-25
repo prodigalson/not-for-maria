@@ -30,6 +30,8 @@ let filters = { dateType: 'any', vibe: 'any', priceRange: 'any', horoscope: 'any
 
 const priceLabel = (n) => '\u20AC'.repeat(n);
 
+const mariaScore = (rating) => Math.round((Number(rating || 0) / 5) * 100);
+
 const horoscopePrefs = {
     aries:       { types: ['live-music', 'outdoor', 'cocktail-bar'], vibes: ['festive', 'casual'] },
     taurus:      { types: ['romantic-dinner', 'coffee-pastry', 'aperitivo'], vibes: ['romantic', 'classic'] },
@@ -79,6 +81,8 @@ function buildSpread(spot, index, total) {
     const dateTypeLabel = t(spot.dateType);
     const vibeLabel = t(spot.vibe);
     const price = priceLabel(spot.priceRange || 1);
+    const googleRating = Number(spot.googleRating || 0).toFixed(1);
+    const probability = mariaScore(spot.googleRating);
 
     return `
     <div class="spread" data-index="${index}">
@@ -87,7 +91,7 @@ function buildSpread(spot, index, total) {
         </div>
         <div class="page-right">
             <header class="folio">
-                <span>Not for Maria</span>
+                <span>Ave Maria</span>
             </header>
             <div class="info-layout">
                 <h1 class="destination-title${titleSizeClass}">
@@ -96,6 +100,11 @@ function buildSpread(spot, index, total) {
                 </h1>
                 <p class="destination-description">${description}</p>
                 <div class="info-cards">
+                    <div class="info-card probability-card">
+                        <div class="info-card-label">${t('mariaProbability')}</div>
+                        <div class="info-card-value probability-value">${probability}%</div>
+                        <div class="info-card-sub">${t('googleRating')} ${googleRating}/5</div>
+                    </div>
                     <div class="info-card">
                         <div class="info-card-label">${t('dateType')}</div>
                         <div class="info-card-value">${dateTypeLabel}</div>
@@ -223,7 +232,7 @@ function applyCityToCover() {
     }
     const loaderSub = document.querySelector('.loader-subtitle');
     if (loaderSub) loaderSub.textContent = t('folioCurated');
-    document.title = 'Not for Maria | ' + t('folioCurated');
+    document.title = 'Ave Maria | ' + t('folioCurated');
 }
 
 function updateCityButtons() {
@@ -404,11 +413,11 @@ function initShare() {
     const shareBtn = document.getElementById('share-btn');
     shareBtn.addEventListener('click', async () => {
         const spot = displayedSpots[currentSpread];
-        const name = spot ? spot.name.replace(/\n/g, ' ') : 'Not for Maria';
+        const name = spot ? spot.name.replace(/\n/g, ' ') : 'Ave Maria';
         const url = window.location.origin;
         const text = `${name} \u2014 ${t('folioCurated')}`;
         if (navigator.share) {
-            try { await navigator.share({ title: 'Not for Maria', text, url }); } catch {}
+            try { await navigator.share({ title: 'Ave Maria', text, url }); } catch {}
         } else {
             try { await navigator.clipboard.writeText(`${text}\n${url}`); } catch {}
             shareBtn.title = 'Copied!';
