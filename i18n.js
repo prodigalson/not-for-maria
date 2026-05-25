@@ -11,8 +11,8 @@ export const CITIES = {
 export const DEFAULT_CITY = 'maria';
 
 export const translations = {
-    coverTagline: { en: 'Romantic places Matt\nnever took his fiancee.' },
-    coverDesc: { en: 'A mobile field guide to beautiful places,\nquestionable priorities, and documented evidence.' },
+    coverTagline: { en: 'The most romantic places Johnny took his friends to\nthat Matt should take his fiancée to!' },
+    coverDesc: { en: 'A mobile field guide to beautiful places\naround the world.' },
     openMagazine: { en: 'Open the file' },
     enter: { en: 'Enter' },
     folioDate: { en: 'Evidence' },
