@@ -26,7 +26,7 @@ export const translations = {
     googleRating: { en: 'Google average' },
     footerText: { en: 'AVE MARIA / ROMANTIC EVIDENCE' },
     kbHint: { en: 'Use arrow keys or scroll to navigate' },
-    swipeHint: { en: 'Swipe to discover' },
+    swipeHint: { en: 'Swipe to explore' },
     issueNo: { en: 'Case File No. 01' },
     season: { en: 'Spring 2026' },
     shareLocation: { en: 'Share this exhibit' },
