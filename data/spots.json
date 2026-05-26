@@ -82,5 +82,110 @@
     "mapsUrl": "https://maps.google.com/?cid=8163887061618839923&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
     "lat": 40.54379,
     "lon": 14.251066999999999
+  },
+  {
+    "id": "villa-d-este",
+    "city": "maria",
+    "name": "VILLA\nD'ESTE",
+    "neighborhood": {
+      "en": "Cernobbio, Lake Como"
+    },
+    "description": {
+      "en": "A grand lakefront palace with terraces, gardens, polished service, and the kind of Como glamour that makes subtlety look optional. This is not a hint. It is a map pin with lighting."
+    },
+    "heroImage": "https://lh3.googleusercontent.com/places/ANXAkqFEx6q06G2aBQfbR3lJun9mPQ-JRRRH2rgLAYpAqPtpmpea9roVdkMjR6z-pFfeCORO3qiG9TLgMiJIyCJ54X68qV8VNi_FSMg=s4800-w2400-h1800",
+    "heroAlt": "Villa d'Este",
+    "heroPosition": "center center",
+    "dateType": "romantic-dinner",
+    "vibe": "classic",
+    "priceRange": 4,
+    "googleRating": 4.7,
+    "mapsUrl": "https://maps.google.com/?cid=18235429903716424722&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "lat": 45.8450079,
+    "lon": 9.0793838
+  },
+  {
+    "id": "ristorante-crotto-dei-platani",
+    "city": "maria",
+    "name": "CROTTO\nDEI PLATANI",
+    "neighborhood": {
+      "en": "Brienno, Lake Como"
+    },
+    "description": {
+      "en": "A lakeside restaurant tucked into the cliffs of Brienno, with tables close enough to the water to make the whole dinner feel slightly unreal. A strong candidate for the Maria itinerary."
+    },
+    "heroImage": "https://lh3.googleusercontent.com/places/ANXAkqEpq9RF7rClm-yQyotBM23apT4ZU1WLC6sK5BSV9RAZ1AC_3sq5E6bgm0XxkhGXnx1QOpMspn5FPHmkwSRDuUlTf0ttxfFJoHE=s4800-w900-h600",
+    "heroAlt": "Ristorante Crotto dei Platani",
+    "heroPosition": "center center",
+    "dateType": "romantic-dinner",
+    "vibe": "romantic",
+    "priceRange": 4,
+    "googleRating": 4.3,
+    "mapsUrl": "https://maps.google.com/?cid=4573627367740002879&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "lat": 45.928057599999995,
+    "lon": 9.1299855
+  },
+  {
+    "id": "dai-muagetti",
+    "city": "maria",
+    "name": "DAI\nMUAGETTI",
+    "neighborhood": {
+      "en": "San Rocco, Camogli"
+    },
+    "description": {
+      "en": "A Ligurian terrace above the sea, the kind of place where lunch becomes a view, a view becomes a memory, and someone should probably apologize for not booking it sooner."
+    },
+    "heroImage": "https://lh3.googleusercontent.com/place-photos/AJRVUZPUF47WgP6ym79GxrQRttCZE5pDMj0uaBKHKQXqDY-RibRHGVx3ayfAEMEmzWOLMQ5jnml6xg5Z8BuWlEQkGxNU9Y5FOj2EYjKQKDBYkwZbry1-dZRlmKEijRzEIHkrT84ponruLnu9pgaNXRU=s4800-w2400-h1800",
+    "heroAlt": "dai Muagetti",
+    "heroPosition": "center center",
+    "dateType": "casual-lunch",
+    "vibe": "romantic",
+    "priceRange": 3,
+    "googleRating": 4.5,
+    "mapsUrl": "https://maps.google.com/?cid=2965071856696202623&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "lat": 44.336196099999995,
+    "lon": 9.158028
+  },
+  {
+    "id": "ristorante-da-adolfo",
+    "city": "maria",
+    "name": "DA\nADOLFO",
+    "neighborhood": {
+      "en": "Laurito, Positano"
+    },
+    "description": {
+      "en": "A boat-ride beach lunch in Laurito with grilled mozzarella, umbrellas, and the Amalfi Coast doing entirely too much. It is casual only in the way movie scenes are casual."
+    },
+    "heroImage": "https://lh3.googleusercontent.com/place-photos/AJRVUZMZRLGR5C1e0gKubzY6BdqFl4f5XTbIu8JG7Eo3uQWfzPepxaVOCj7hTDWTyHZUElMMb-LNAd8iVATuLoqOk8qLLFn6ulhKmgtUJ8hFzc_nPl7FwjLLA6DyfnhTw27em901zWPsKccC0rBD7A=s4800-w2400-h1800",
+    "heroAlt": "Ristorante Da Adolfo",
+    "heroPosition": "center center",
+    "dateType": "casual-lunch",
+    "vibe": "classic",
+    "priceRange": 3,
+    "googleRating": 4.4,
+    "mapsUrl": "https://maps.google.com/?cid=10053183644388237931&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "lat": 40.6223892,
+    "lon": 14.5072782
+  },
+  {
+    "id": "piazzale-michelangelo",
+    "city": "maria",
+    "name": "PIAZZALE\nMICHELANGELO",
+    "neighborhood": {
+      "en": "Florence, Tuscany"
+    },
+    "description": {
+      "en": "The Florence panorama that solves every sunset argument. Walk up, look back at the city, and let the entire Renaissance do the heavy lifting."
+    },
+    "heroImage": "https://lh3.googleusercontent.com/place-photos/AJRVUZN045Hy-afMQ3GkqMtsKpfTvbixApguddD2sAA0caKzAr9dLxB003UUTNu_1BltiNe5RndeQo2s-Sk-rUvyA1qs097C6oSLEzlQ5y8wZSxmqXzscXr0T2pEuFlVLiENfK0XWj1QZ-_v3U04lA=s4800-w2400-h1800",
+    "heroAlt": "Piazzale Michelangelo",
+    "heroPosition": "center center",
+    "dateType": "outdoor",
+    "vibe": "romantic",
+    "priceRange": 1,
+    "googleRating": 4.8,
+    "mapsUrl": "https://maps.google.com/?cid=13040006563833401625&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+    "lat": 43.7629314,
+    "lon": 11.265056099999999
   }
 ]
